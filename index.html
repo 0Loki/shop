@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B.B Shop</title>
+    <!-- เชื่อมต่อกับ CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">B.B Shop</div>
+        <ul class="menu">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#categories">Categories</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="search-container">
+            <input type="text" placeholder="Search..." class="search-input">
+            <i class="fas fa-search search-icon"></i>
+        </div>
+        <div class="icons">
+            <div class="cart-icon">
+                <a href="#cart"><i class="fas fa-shopping-cart"></i></a>
+            </div>
+            <div class="dropdown-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h2>Welcome to Our Store!</h2>
+        <p>Find the best products for your needs.</p>
+        <button class="btn btn-primary" onclick="scrollToSection('categories')">Shop Now</button>
+    </section>
+
+    <!-- Banner Section -->
+    <section id="banner" class="banner-section">
+        <div class="banner">
+            <div class="banner-content">
+                <h1>เตรียมช้อปดีลสุดปัง</h1>
+                <p>กลางเดือนจะเริ่มแล้ว ลดสูงสุด 90% + ลดเพิ่ม 3,000.-</p>
+                <a href="#" class="btn-primary">เพิ่มลงรถเข็น</a>
+            </div>
+            <div class="banner-slider">
+                <div class="slide">
+                    <img src="images/banner1.jpg" alt="Product Image 1">
+                </div>
+                <div class="slide">
+                    <img src="images/banner2.jpg" alt="Product Image 2">
+                </div>
+                <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+                <button class="next" onclick="changeSlide(1)">&#10095;</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section id="categories">
+        <h3>Product Categories</h3>
+        <div class="product-container">
+            <div class="card">
+                <img src="images/pro1.jfif" alt="น้ำหอมCuter press กลิ่น Sweet Musk">
+                <h5 class="card-title">น้ำหอม Cute Press</h5>
+                <p class="card-text">น้ำหอมCuter press กลิ่น Sweet Musk</p>
+                <a  class="btn btn-primary">฿499</a>
+            </div>
+            <div class="card">
+                <img src="images/pro2.webp" alt="น้ำหอม Dior Sauvage">
+                <h5 class="card-title">น้ำหอม Dior Sauvage</h5>
+                <p class="card-text">น้ำหอม Dior Sauvage Eau De Toilette</p>
+                <a onclick="addToCart('Product 1')" class="btn btn-primary">฿3,250</a>
+            </div><div class="card">
+                <img src="images/pro3.webp" alt="Product Image">
+                <h5 class="card-title">น้ำหอม LYN BLOOM</h5>
+                <p class="card-text">น้ำหอม LYN BLOOM EAU DE TOILETTE</p>
+                <a class="btn btn-primary">฿903</a>
+            </div>
+            <!-- เพิ่มการ์ดสินค้าเพิ่มเติมตามต้องการ -->
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>ติดต่อเราได้ที่</h2>
+        <p>Email: boriphak84@gmail.com</p>
+    </section>
+
+    <!-- เชื่อมต่อกับ JavaScript -->
+    <script src="assets/javascript/script.js"></script>
+    <!-- Bootstrap JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
