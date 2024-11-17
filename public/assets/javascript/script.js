@@ -10,7 +10,6 @@ document.querySelectorAll('.cta-button').forEach(button => {
     });
 });
 
-
 // เลื่อนแบบสมูท
 function scrollToSection(sectionId) {
     document.getElementById(sectionId).scrollIntoView({
@@ -26,7 +25,6 @@ window.addEventListener("scroll", function() {
         navbar.classList.remove("scrolled");
     }
 });
-
 
 document.querySelectorAll('.menu a').forEach(link => {
     link.addEventListener('click', function(e) {
@@ -106,3 +104,26 @@ function changeSlide(n) {
     });
     slides[slideIndex - 1].style.display = 'block';
 }
+
+function animateCartIcon() {
+    const cartIcon = document.querySelector('.cart-icon i');
+    cartIcon.classList.add('animate-bounce');
+    setTimeout(() => {
+        cartIcon.classList.remove('animate-bounce');
+    }, 500);
+}
+
+document.querySelectorAll('.add-to-cart').forEach(button => {
+    button.addEventListener('click', function() {
+        const productName = this.parentElement.getAttribute('data-product');
+        const productPrice = this.parentElement.getAttribute('data-price');
+        const productImage = this.parentElement.getAttribute('data-image');
+
+        if (productName && productPrice && productImage) {
+            addToCart(productName, productPrice, productImage);
+            animateCartIcon();
+        } else {
+            console.error('Product details not found for this item.');
+        }
+    });
+});

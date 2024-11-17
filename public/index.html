@@ -27,7 +27,18 @@
         </div>
         <div class="icons">
             <div class="cart-icon">
-                <a href="#cart"><i class="fas fa-shopping-cart"></i></a>
+                <a><i class="fas fa-shopping-cart"></i></a>
+                <span class="cart-count" style="display: none;">0</span>
+                <div class="cart-dropdown" id="cart-dropdown">
+                    <div class="cart-items" id="cart-items">
+                        <!-- สินค้าจะถูกแสดงที่นี่ -->
+                    </div>
+                    <div class="cart-total">
+                        <p>ยอดรวม: <span id="cart-total">0</span></p>
+                        <button id="checkout-btn" class="btn btn-primary checkout-button">ชำระเงิน</button>
+                        <div id="error" style="color: red; display: none;">เกิดข้อผิดพลาด กรุณาลองใหม่อีกครั้ง</div>
+                    </div>
+                </div>
             </div>
             <div class="dropdown-icon">
                 <span></span>
@@ -69,58 +80,24 @@
     <section id="categories">
         <h3>Product Categories</h3>
         <div class="product-container">
-            <div class="card">
+            <div class="card" data-product="Cute Press" data-price="499" data-image="pro1.jfif">
                 <img src="images/pro1.jfif" alt="น้ำหอมCuter press กลิ่น Sweet Musk">
                 <h5 class="card-title">น้ำหอม Cute Press</h5>
                 <p class="card-text">น้ำหอมCuter press กลิ่น Sweet Musk</p>
-                <a  class="btn btn-primary">฿499</a>
+                <a class="btn btn-primary add-to-cart">เพิ่มลงรถเข็น</a>
             </div>
-            <div class="card">
+            <div class="card" data-product="Dior Sauvage" data-price="3250" data-image="pro2.webp">
                 <img src="images/pro2.webp" alt="น้ำหอม Dior Sauvage">
                 <h5 class="card-title">น้ำหอม Dior Sauvage</h5>
                 <p class="card-text">น้ำหอม Dior Sauvage Eau De Toilette</p>
-                <a onclick="addToCart('Product 1')" class="btn btn-primary">฿3,250</a>
-            </div><div class="card">
-                <img src="images/pro3.webp" alt="Product Image">
+                <a class="btn btn-primary add-to-cart">เพิ่มลงรถเข็น</a>
+            </div>
+            <div class="card" data-product="LYN BLOOM" data-price="903" data-image="pro3.webp">
+                <img src="images/pro3.webp" alt="น้ำหอม LYN BLOOM">
                 <h5 class="card-title">น้ำหอม LYN BLOOM</h5>
                 <p class="card-text">น้ำหอม LYN BLOOM EAU DE TOILETTE</p>
-                <a class="btn btn-primary">฿903</a>
+                <a class="btn btn-primary add-to-cart">เพิ่มลงรถเข็น</a>
             </div>
-            <div class="card">
-                <img src="images/pro1.jfif" alt="น้ำหอมCuter press กลิ่น Sweet Musk">
-                <h5 class="card-title">น้ำหอม Cute Press</h5>
-                <p class="card-text">น้ำหอมCuter press กลิ่น Sweet Musk</p>
-                <a  class="btn btn-primary">฿499</a>
-            </div>
-            <div class="card">
-                <img src="images/pro2.webp" alt="น้ำหอม Dior Sauvage">
-                <h5 class="card-title">น้ำหอม Dior Sauvage</h5>
-                <p class="card-text">น้ำหอม Dior Sauvage Eau De Toilette</p>
-                <a onclick="addToCart('Product 1')" class="btn btn-primary">฿3,250</a>
-            </div><div class="card">
-                <img src="images/pro3.webp" alt="Product Image">
-                <h5 class="card-title">น้ำหอม LYN BLOOM</h5>
-                <p class="card-text">น้ำหอม LYN BLOOM EAU DE TOILETTE</p>
-                <a class="btn btn-primary">฿903</a>
-            </div>
-            <div class="card">
-                <img src="images/pro1.jfif" alt="น้ำหอมCuter press กลิ่น Sweet Musk">
-                <h5 class="card-title">น้ำหอม Cute Press</h5>
-                <p class="card-text">น้ำหอมCuter press กลิ่น Sweet Musk</p>
-                <a  class="btn btn-primary">฿499</a>
-            </div>
-            <div class="card">
-                <img src="images/pro2.webp" alt="น้ำหอม Dior Sauvage">
-                <h5 class="card-title">น้ำหอม Dior Sauvage</h5>
-                <p class="card-text">น้ำหอม Dior Sauvage Eau De Toilette</p>
-                <a onclick="addToCart('Product 1')" class="btn btn-primary">฿3,250</a>
-            </div><div class="card">
-                <img src="images/pro3.webp" alt="Product Image">
-                <h5 class="card-title">น้ำหอม LYN BLOOM</h5>
-                <p class="card-text">น้ำหอม LYN BLOOM EAU DE TOILETTE</p>
-                <a class="btn btn-primary">฿903</a>
-            </div>
-            
             <!-- เพิ่มการ์ดสินค้าเพิ่มเติมตามต้องการ -->
         </div>
     </section>
@@ -132,6 +109,7 @@
     </section>
 
     <!-- เชื่อมต่อกับ JavaScript -->
+    <script src="assets/javascript/payment.js"></script>
     <script src="assets/javascript/script.js"></script>
     <!-- Bootstrap JavaScript -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
